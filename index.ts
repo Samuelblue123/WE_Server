@@ -9,7 +9,25 @@ import "./config";
 import {errorHandler} from "./middleware/errorHandler.middleware.js";
 import {mapEndpoints} from "./endpoints.js";
 
+process.on('SIGTERM', () => {
+    console.log('Received SIGTERM, shutting down gracefully...');
+    process.exit(0);
+});
+process.on('SIGINT', () => {
+    console.log('Received SIGINT, shutting down gracefully...');
+    process.exit(0);
+});
 
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err);
+    // Optionally, perform cleanup and try to continue running,
+    // but ideally log and then restart gracefully.
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection:', reason);
+    // Handle or log the promise rejection here.
+});
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
