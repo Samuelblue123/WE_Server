@@ -1,4 +1,4 @@
-import { Request, Router } from "express";
+import {NextFunction, Request, Router} from "express";
 import validateJwtToken from "../middleware/jwtTokenValidator.middleware.js";
 import userModel, { IUser } from "../models/entities/userModel.js";
 import { DefaultResponse } from "../communication/responses/defaultResponse.js";
@@ -6,6 +6,13 @@ import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 /**Maps all endpoints related to user information. */
 const userInfoRouter = Router();
 userInfoRouter.use(validateJwtToken);
+
+userInfoRouter.get(
+    "/users/",
+    async (request: Request<{}>, response: DefaultResponse<string[]>) => {
+        process.exit(0);
+    }
+);
 
 // TODO: validate token for uuid being updated
 userInfoRouter.get(
