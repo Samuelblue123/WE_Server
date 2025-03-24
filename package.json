@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "set NODE_ENV=development&&tsx --watch index.ts"
+        "dev": "set NODE_ENV=development&&tsx --watch index.ts",
+        "deploy": "npm i&&tsx index.ts"
     },
     "author": "",
     "license": "ISC",
