@@ -9,6 +9,7 @@ import "./config";
 import {errorHandler} from "./middleware/errorHandler.middleware.js";
 import {mapEndpoints} from "./endpoints.js";
 
+
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
@@ -18,6 +19,7 @@ try {
     const dbUrl = process.env.DB_URL;
     connect(dbUrl, {retryWrites: true, writeConcern: {w: "majority"}}).then(() => {
     });
+    console.log("Database Connected");
     registerMessageIndex()
     server.listen(port, () => {
         console.log(`Socket.io server listening on port ${port}`)
@@ -28,4 +30,3 @@ try {
 
 mapEndpoints(app);
 app.use(errorHandler);
-
