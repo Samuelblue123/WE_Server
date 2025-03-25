@@ -7,7 +7,7 @@ import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 const statusRouter = Router();
 
 statusRouter.head("/", (request: Request, response: DefaultResponse) => {
-    response.send();
+    response.status(200).send("Service Live");
 });
 
 export default statusRouter;
