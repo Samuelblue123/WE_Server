@@ -19,10 +19,6 @@ export const mapEndpoints = (app: Express) => {
         next();
     });
 
-    app.get("/", (_req, res) => {
-        res.send("Socket.IO + API server running");
-    });
-
 // Map all endpoints that don't require guild id
     app.use("/", statusRouter);
 
