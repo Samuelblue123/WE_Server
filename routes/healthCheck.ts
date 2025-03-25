@@ -9,7 +9,6 @@ const healthRouter = Router();
 
 healthRouter.get("/", (request: Request, response: DefaultResponse) => {
     response.status(200);
-    console.log(response.statusCode);
     response.send("responseCode: " + response.statusCode);
 });
 
