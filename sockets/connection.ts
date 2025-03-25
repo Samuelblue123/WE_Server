@@ -1,14 +1,14 @@
-import { io } from "../app.js";
+import { io } from "../app.ts";
 import {Server, Socket, RemoteSocket} from "socket.io";
-import "../config.js";
-import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from "../types/socketIOTypes.js";
-import {IServer2WynnMessage, IWynnMessage} from "../types/messageTypes.js";
-import { getOnlineUsers, isOnline } from "../utils/socketUtils.js";
-import { usernameToUuid } from "../communication/httpClients/mojangApiClient.js";
-import { checkVersion } from "../utils/versionUtils.js";
-import UserModel from "../models/entities/userModel.js";
-import { getChannelFromWynnGuild } from "../utils/serverUtils.js";
-import userModel from "../models/entities/userModel.js";
+import "../config.ts";
+import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from "../types/socketIOTypes.ts";
+import {IServer2WynnMessage, IWynnMessage} from "../types/messageTypes.ts";
+import { getOnlineUsers, isOnline } from "../utils/socketUtils.ts";
+import { usernameToUuid } from "../communication/httpClients/mojangApiClient.ts";
+import { checkVersion } from "../utils/versionUtils.ts";
+import UserModel from "../models/entities/userModel.ts";
+import { getChannelFromWynnGuild } from "../utils/serverUtils.ts";
+import userModel from "../models/entities/userModel.ts";
 
 const ENCODED_DATA_PATTERN = /([\u{F0000}-\u{FFFFD}]|[\u{100000}-\u{10FFFF}])+/gu;
 const wynnMessagePatterns: IWynnMessage[] = [
@@ -140,9 +140,9 @@ export async function shouldBNotif(socket:RemoteSocket<ServerToClientEvents,Sock
 export async function getUuids() {
     const jsonUsers= await findUsers();
     var uuids:string[] = [];
-    jsonUsers.forEach(user => {
-        uuids.push(user.uuid);
-    });
+//    jsonUsers.forEach(user => {
+//        uuids.push(user.uuid);
+//    });
     return uuids;
 }
 

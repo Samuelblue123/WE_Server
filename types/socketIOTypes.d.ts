@@ -1,4 +1,4 @@
-import { IServer2WynnMessage, IWynn2DiscordMessage } from "./messageTypes.js";
+import { IServer2WynnMessage, IWynn2DiscordMessage } from "./messageTypes.ts";
 
 export interface ServerToClientEvents {
     wynnMessage: (message: IWynn2DiscordMessage) => void;

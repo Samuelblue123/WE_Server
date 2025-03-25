@@ -1,5 +1,5 @@
-import {NotFoundError} from "../../errors/implementations/notFoundError.js";
-import {HttpClientError} from "../../errors/implementations/httpClientError.js";
+import {NotFoundError} from "../../errors/implementations/notFoundError.ts";
+import {HttpClientError} from "../../errors/implementations/httpClientError.ts";
 
 /** Caches username to UUID conversions from Mojang api.*/
 const usernameUuidMap: { [key: string]: { uuid: string; timestamp: number } } = {};

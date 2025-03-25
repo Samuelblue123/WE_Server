@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { BaseModel } from "./baseModel.js";
+import { BaseModel } from "./baseModel.ts";
 
 // interface IListeningChannel {
 //     channelId: number;

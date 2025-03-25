@@ -1,7 +1,7 @@
 import {NextFunction, Request, Router} from "express";
-import validateJwtToken from "../middleware/jwtTokenValidator.middleware.js";
-import userModel, { IUser } from "../models/entities/userModel.js";
-import { DefaultResponse } from "../communication/responses/defaultResponse.js";
+import validateJwtToken from "../middleware/jwtTokenValidator.middleware.ts";
+import userModel, { IUser } from "../models/entities/userModel.ts";
+import { DefaultResponse } from "../communication/responses/defaultResponse.ts";
 
 /**Maps all endpoints related to user information. */
 const userInfoRouter = Router();
@@ -19,8 +19,8 @@ userInfoRouter.get(
         try {
             if (!user) {
 
-                const tester = user.uuid;
-                console.log(tester);
+ //               const tester = user.uuid;
+ //               console.log(tester);
 
             }
         }
@@ -28,7 +28,7 @@ userInfoRouter.get(
                 response.status(637).send();
                 return;
         }
-        uuids.push(user.uuid);
+//        uuids.push(user.uuid);
         response.status(200).send(uuids);
 
     }
@@ -43,8 +43,8 @@ userInfoRouter.get(
         try {
             if (!user) {
 
-                const tester = user.uuid;
-                console.log(tester);
+//                const tester = user.uuid;
+//                console.log(tester);
 
             }
         }
@@ -52,7 +52,7 @@ userInfoRouter.get(
             response.status(637).send();
             return;
         }
-        response.status(200).send(user.worldevents);
+//        response.status(200).send(user.worldevents);
 
     }
 );
@@ -108,15 +108,15 @@ userInfoRouter.put(
                 .or([{uuid}])
                 .exec();
             try {
-                const index = user.worldevents.indexOf(worldevents[worldevents.length - 1]);
-                console.log(index);
-                if (!(index===-1)) {
+//                const index = user.worldevents.indexOf(worldevents[worldevents.length - 1]);
+//                console.log(index);
+//                if (!(index===-1)) {
                     response.status(628).send({error: "Already registered for that World Event."});
                     return;
-                }
+//                }
             }
             catch (error) {}
-            await userModel.findOneAndReplace({uuid:uuid},{uuid:uuid, worldevents:worldevents},{upsert:true}).exec();
+//            await userModel.findOneAndReplace({uuid:uuid},{uuid:uuid, worldevents:worldevents},{upsert:true}).exec();
             const updatedUser = await userModel.findOne()
                 .or([{uuid}])
                 .exec();
@@ -124,7 +124,7 @@ userInfoRouter.put(
             //    uuid: uuid,
             //    worldevents: worldevents
             //});
-            response.status(204).send(updatedUser.toJSON().toString());
+//            response.status(204).send(updatedUser.toJSON().toString());
         }
 
          catch (error) {
@@ -152,20 +152,20 @@ userInfoRouter.put(
             console.log(request.body);
             var {uuid, worldevents} = request.body;
             const user = await userModel.findOne({uuid:uuid}).exec();
-            const index = user.worldevents.indexOf(worldevents[worldevents.length-1]);
-            console.log(index);
+//            const index = user.worldevents.indexOf(worldevents[worldevents.length-1]);
+//            console.log(index);
 
-            if (index===-1) {
+//            if (index===-1) {
                 response.status(627).send({error: "Not registered for that World Event."});
                 return;
-            }
-            worldevents.splice(index,1);
-            worldevents.splice(worldevents.length-1,1)
+//            }
+//            worldevents.splice(index,1);
+//            worldevents.splice(worldevents.length-1,1)
             await userModel.findOneAndReplace({uuid:uuid},{uuid:uuid, worldevents:worldevents},{upsert:true}).exec();
             const updatedUser = await userModel.findOne()
                 .or([{uuid}])
                 .exec();
-            response.status(204).send(updatedUser.toJSON().toString());
+//            response.status(204).send(updatedUser.toJSON().toString());
         }
 
         catch (error) {

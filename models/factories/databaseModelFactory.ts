@@ -1,5 +1,5 @@
 ﻿import {Connection, Model, Schema} from "mongoose";
-//import userSchema, {IUser} from "../schemas/userSchema.js";
+//import userSchema, {IUser} from "../schemas/userSchema.ts";
 
 
 export class DatabaseModelFactory {

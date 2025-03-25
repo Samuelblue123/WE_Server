@@ -1,5 +1,5 @@
 import { Request, Router } from "express";
-import { DefaultResponse } from "../communication/responses/defaultResponse.js";
+import { DefaultResponse } from "../communication/responses/defaultResponse.ts";
 import {beforeEach} from "node:test";
 
 /**

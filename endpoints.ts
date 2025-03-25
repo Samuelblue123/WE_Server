@@ -1,11 +1,11 @@
 ﻿import {Express, NextFunction, Request, Response, Router} from "express";
-import statusRouter from "./routes/status.js";
-import healthRouter from "./routes/healthCheck.js";
-import modVersionRouter from "./routes/modVersion.js";
-import userInfoRouter from "./routes/userInfo.js";
-import configRouter from ".//routes/serverConfig.js";
-import {NotFoundError} from "./errors/implementations/notFoundError.js";
-import {API_VERSION} from "./config.js";
+import statusRouter from "./routes/status.ts";
+import healthRouter from "./routes/healthCheck.ts";
+import modVersionRouter from "./routes/modVersion.ts";
+import userInfoRouter from "./routes/userInfo.ts";
+import configRouter from ".//routes/serverConfig.ts";
+import {NotFoundError} from "./errors/implementations/notFoundError.ts";
+import {API_VERSION} from "./config.ts";
 
 export const mapEndpoints = (app: Express) => {
 

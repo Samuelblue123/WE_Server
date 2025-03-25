@@ -1,13 +1,13 @@
 import express from "express";
-import app, {server} from "./app.js";
+import app, {server} from "./app.ts";
 import {connect} from "mongoose";
 import bodyParser from "body-parser";
-import {registerMessageIndex} from "./sockets/connection.js";
+import {registerMessageIndex} from "./sockets/connection.ts";
 
 import cors from "cors";
 import "./config";
-import {errorHandler} from "./middleware/errorHandler.middleware.js";
-import {mapEndpoints} from "./endpoints.js";
+import {errorHandler} from "./middleware/errorHandler.middleware.ts";
+import {mapEndpoints} from "./endpoints.ts";
 
 process.on('SIGTERM', () => {
     console.log('Received SIGTERM, shutting down gracefully...');
