@@ -1,6 +1,5 @@
 import { Request, Router } from "express";
 import { DefaultResponse } from "../communication/responses/defaultResponse.js";
-import profiler from "v8-profiler-next";
 import {beforeEach} from "node:test";
 
 /**
