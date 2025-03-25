@@ -8,7 +8,9 @@ import {beforeEach} from "node:test";
 const healthRouter = Router();
 
 healthRouter.get("/", (request: Request, response: DefaultResponse) => {
-    response.status(200).send();
+    response.status(200);
+    console.log(response.statusCode);
+    response.send(response);
 });
 
 export default healthRouter;
