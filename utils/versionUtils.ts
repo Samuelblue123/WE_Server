@@ -32,7 +32,7 @@ export function checkVersion(versionString: string | undefined): boolean {
 }
 
 export async function getLatestVersion(): Promise<IModVersionResponse | null> {
-    const url = "https://api.modrinth.com/v2/project/guild-api/version";
+    const url = "to be added";
     try {
         const response = await fetch(url);
         const res = await response.json();

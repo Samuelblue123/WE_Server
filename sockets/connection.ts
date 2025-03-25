@@ -75,10 +75,10 @@ export default function registerSocketHandlers(
             }
         );
         socket.on("wynnMessage", async (message) => {
-//            if (!checkVersion(socket.data.modVersion)) {
-//                console.log(`skipping request from outdated mod version: ${socket.data.modVersion}`);
-//                return;
-//            }
+            //if (!checkVersion(socket.data.modVersion)) {
+              //  console.log(`skipping request from outdated mod version: ${socket.data.modVersion}`);
+                //return;
+            //}
 
             messageParts = [];
             concatMessage = "";
@@ -106,14 +106,6 @@ export default function registerSocketHandlers(
                 await notifUsers(message);
             }
         });
-
-//        socket.on("serverMessage", async (message) => {
-  //          const notif=await notifyUsers(socket);
-    //        if (notif) {
-      //          socket.emit("serverMessage", message);
-//
-  //          }
-    //    });
 
         socket.on("sync", () => {
             socket.data.messageIndex = messageIndex[0];
@@ -170,4 +162,4 @@ export async function findUsers() {
 
 setInterval(() => {
     processedMessages.clear();
-}, 1 * 90 * 1000); // every 1 minute 30 seconds
+}, 90 * 1000); // every 90 seconds
