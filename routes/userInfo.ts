@@ -7,13 +7,6 @@ import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 const userInfoRouter = Router();
 userInfoRouter.use(validateJwtToken);
 
-userInfoRouter.get(
-    "/users/",
-    async (request: Request<{}>, response: DefaultResponse<string[]>) => {
-        process.exit(0);
-    }
-);
-
 // TODO: validate token for uuid being updated
 userInfoRouter.get(
     "/",
