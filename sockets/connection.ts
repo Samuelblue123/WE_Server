@@ -140,9 +140,9 @@ export async function shouldBNotif(socket:RemoteSocket<ServerToClientEvents,Sock
 export async function getUuids() {
     const jsonUsers= await findUsers();
     var uuids:string[] = [];
-//    jsonUsers.forEach(user => {
-//        uuids.push(user.uuid);
-//    });
+    jsonUsers.forEach(user => {
+        uuids.push(user.uuid);
+    });
     return uuids;
 }
 
