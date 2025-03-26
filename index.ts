@@ -7,7 +7,7 @@ import {registerMessageIndex} from "./sockets/connection.js";
 import cors from "cors";
 import "./config";
 import {errorHandler} from "./middleware/errorHandler.middleware.js";
-import {mapEndpoints} from "./endpoints.ts";
+import {mapEndpoints} from "./endpoints.js";
 
 process.on('SIGTERM', () => {
     console.log('Received SIGTERM, shutting down gracefully...');
