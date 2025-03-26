@@ -1,5 +1,5 @@
 import { Request, Router } from "express";
-import { DefaultResponse } from "../communication/responses/defaultResponse.ts";
+import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 
 /**
  * Maps an app status checking endpoint

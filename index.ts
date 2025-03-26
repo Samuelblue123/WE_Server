@@ -1,12 +1,12 @@
 import express from "express";
-import app, {server} from "./app.ts";
+import app, {server} from "./app.js";
 import {connect} from "mongoose";
 import bodyParser from "body-parser";
-import {registerMessageIndex} from "./sockets/connection.ts";
+import {registerMessageIndex} from "./sockets/connection.js";
 
 import cors from "cors";
 import "./config";
-import {errorHandler} from "./middleware/errorHandler.middleware.ts";
+import {errorHandler} from "./middleware/errorHandler.middleware.js";
 import {mapEndpoints} from "./endpoints.ts";
 
 process.on('SIGTERM', () => {

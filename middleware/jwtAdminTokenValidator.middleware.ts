@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
-import "../config.ts";
+import "../config.js";
 import { Response, NextFunction, Request } from "express";
 
 // Needs to match the token in the generator. Store it in a .env or .json for reusability.

@@ -1,5 +1,5 @@
-﻿import UserModel, {IUser} from "../models/entities/userModel.ts";
-import {BaseRepository} from "./base/baseRepository.ts";
+﻿import UserModel, {IUser} from "../models/entities/userModel.js";
+import {BaseRepository} from "./base/baseRepository.js";
 
 export class UserRepository extends BaseRepository<IUser> {
     constructor() {

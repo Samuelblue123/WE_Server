@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
-import "../config.ts";
-import {TokenResponse} from "../communication/responses/tokenResponse.ts";
-import {TokenError} from "../errors/implementations/tokenError.ts";
+import "../config.js";
+import {TokenResponse} from "../communication/responses/tokenResponse.js";
+import {TokenError} from "../errors/implementations/tokenError.js";
 
 export class JwtTokenHandler {
     private readonly secretKey: string;

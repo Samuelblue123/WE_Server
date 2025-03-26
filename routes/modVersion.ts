@@ -1,6 +1,6 @@
 import { Request, Router } from "express";
-import { getLatestVersion, IModVersionResponse } from "../utils/versionUtils.ts";
-import { DefaultResponse } from "../communication/responses/defaultResponse.ts";
+import { getLatestVersion, IModVersionResponse } from "../utils/versionUtils.js";
+import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 
 /**
  * Maps all mod version related endpoints.

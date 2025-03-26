@@ -1,4 +1,4 @@
-import { io } from "../app.ts";
+import { io } from "../app.js";
 
 export interface IOnlineUser {
     Id: number;

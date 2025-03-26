@@ -1,7 +1,7 @@
 import {NextFunction, Request, Router} from "express";
-import validateJwtToken from "../middleware/jwtTokenValidator.middleware.ts";
-import userModel, { IUser } from "../models/entities/userModel.ts";
-import { DefaultResponse } from "../communication/responses/defaultResponse.ts";
+import validateJwtToken from "../middleware/jwtTokenValidator.middleware.js";
+import userModel, { IUser } from "../models/entities/userModel.js";
+import { DefaultResponse } from "../communication/responses/defaultResponse.js";
 
 /**Maps all endpoints related to user information. */
 const userInfoRouter = Router();

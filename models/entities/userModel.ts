@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema } from "mongoose";
-import { BaseModel } from "./baseModel.ts";
+import { BaseModel } from "./baseModel.js";
 
 export interface IUser extends BaseModel {
     uuid: string;
