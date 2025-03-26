@@ -9,7 +9,8 @@
         "dev": "set NODE_ENV=development&&tsx --watch index.ts",
         "deploy": "npm i&&tsx index.ts",
         "pf": "tsx portfinder.ts",
-        "speccase": "npx tsc"
+        "speccase": "npx tsc",
+        "step2": "node dist/index.js"
     },
     "author": "",
     "license": "ISC",
