@@ -99,10 +99,7 @@ export default function registerSocketHandlers(
                 "uuid:",
                 socket.data.uuid
             );
-
-            processedMessages.forEach((fn) =>{
-
-            })
+            
             if(!processedMessages.has(concatMessage)) {
                 processedMessages.add(concatMessage)
                 await notifUsers(message);
