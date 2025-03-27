@@ -75,10 +75,10 @@ export default function registerSocketHandlers(
             }
         );
         socket.on("wynnMessage", async (message) => {
-            //if (!checkVersion(socket.data.modVersion)) {
-              //  console.log(`skipping request from outdated mod version: ${socket.data.modVersion}`);
-                //return;
-            //}
+            if (!checkVersion(socket.data.modVersion)) {
+                console.log(`skipping request from outdated mod version: ${socket.data.modVersion}`);
+                return;
+            }
 
             messageParts = [];
             concatMessage = "";
@@ -100,7 +100,9 @@ export default function registerSocketHandlers(
                 socket.data.uuid
             );
 
+            processedMessages.forEach((fn) =>{
 
+            })
             if(!processedMessages.has(concatMessage)) {
                 processedMessages.add(concatMessage)
                 await notifUsers(message);

@@ -2,9 +2,9 @@
  * Defines the minimum allowed mod version in the format:
  * [major, minor, revision, beta]
  */
-const minimumModVersion = [1, 1, 0, 14];
+const minimumModVersion = [1, 2];
 const versionExtractorPattern = new RegExp(
-    "world_event_tracker/(?<major>\\d+).(?<minor>\\d+).(?<revision>\\d+)(-beta.(?<beta>\\d+))?"
+    "^(?<major>\\d?).(?<minor>\\d+)?"
 );
 
 export interface IModVersionResponse {
@@ -22,10 +22,8 @@ export function checkVersion(versionString: string | undefined): boolean {
     const version = [
         parseInt(matcher.groups!.major),
         parseInt(matcher.groups!.minor),
-        parseInt(matcher.groups!.revision),
-        matcher.groups!.beta ? parseInt(matcher.groups!.beta) : 999999999,
     ];
-    for (let i = 0; i < 4; ++i) {
+    for (let i = 0; i < 2; ++i) {
         if (version[i] != minimumModVersion[i]) return version[i] > minimumModVersion[i];
     }
     return true;

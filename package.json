@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "set NODE_ENV=development&&tsx --watch index.ts",
         "deploy": "npm i&&tsx index.ts",
-        "pf": "tsx portfinder.ts"
+        "pf": "set NODE_ENV=development&&node dist/index.js"
     },
     "author": "",
     "license": "ISC",

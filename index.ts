@@ -28,7 +28,7 @@ process.on('unhandledRejection', (reason, promise) => {
     console.error('Unhandled Rejection:', reason);
     // Handle or log the promise rejection here.
 });
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
